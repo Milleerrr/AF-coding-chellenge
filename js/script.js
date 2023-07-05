@@ -17,8 +17,7 @@ const checkPrime = number => {
     if (isNaN(enteredNumber)) {
         alert('Please enter a valid number.');
         return;
-        // Is bigger than 2, Prime numbers must
-        // be bigger than 2
+        //  Prime numbers must be bigger than 2
     } else if (enteredNumber < 2) {
         alert('Please enter a number greater than 1.');
         return;
@@ -28,11 +27,11 @@ const checkPrime = number => {
     // there are any. Initilised as empty.
     let factorsArray = [1];
     // Counts the factors 
-    let factorCounter = 0
+    let factorCounter = 0;
 
     for (let i = 2; i <= enteredNumber; i++) {
 
-        // Ift there is a factor, add it to 
+        // If there is a factor, add it to 
         // the factors array and increment the 
         // factorCounter
         if (enteredNumber % i === 0) {
