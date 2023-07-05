@@ -1,0 +1,10 @@
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#primeChecker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
