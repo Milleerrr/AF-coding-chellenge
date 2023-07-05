@@ -1,6 +1,15 @@
 // Check if the entered number is Prime. 
 // Returns a message in the browser to 
 // indicate the outcome
+
+// Get references to the input and submit button elements
+// so event listeners can be added and manipulate website elements
+const numberInput = document.getElementById('numberInput');
+const submitButton = document.getElementById('submit');
+const resultMessage = document.getElementById('resultMessage');
+const resetButton = document.getElementById('reset');
+
+// Fucntion to to check enterd number is Prime.
 const checkPrime = number => {
     const enteredNumber = Number(number.value);
 
@@ -43,3 +52,16 @@ const checkPrime = number => {
         resultMessage.innerHTML = `Not Prime! Here the factors: ${factorsArray} number.`;
     }
 };
+
+// Add event listener to the submit button
+submitButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    checkPrime(numberInput);
+});
+
+// Reset environment when reset button is clicked
+resetButton.addEventListener('click', function (event) {
+    event.preventDefault();
+    resultMessage.innerHTML = '';
+    numberInput.value = null;
+});
