@@ -23,7 +23,7 @@ const checkPrime = number => {
         alert('Please enter a number greater than 1.');
         return;
     }
-    
+
     // Array to capture factors of the entered number if
     // there are any. Initilised as empty.
     let factorsArray = [1];
@@ -44,12 +44,15 @@ const checkPrime = number => {
     // Updates the website elemtn p with the appropriate message.
     // Counter variable used a condition, if there are less than 3 
     // factors then the number must Prime. Otherwise number is Prime 
-    // and factors are outputted 
+    // and factors are outputted. Save output to local storage
     if (factorCounter < 3) {
         // Number is Prime.
-        resultMessage.innerHTML = `Prime!`;
+        localStorage.setItem("isPrime", `${enteredNumber} is Prime!`);
+        resultMessage.innerHTML = localStorage.getItem("isPrime");
     } else {
-        resultMessage.innerHTML = `Not Prime! Here the factors: ${factorsArray} number.`;
+        // Number is not Prime
+        localStorage.setItem("notPrime", `Not Prime! Here the factors: ${factorsArray} number.`);
+        resultMessage.innerHTML = localStorage.getItem("notPrime");
     }
 };
 
